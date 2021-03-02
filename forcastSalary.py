@@ -1,6 +1,7 @@
 #用线性回归模型预测工资
 import pandas as pd
 import numpy as np
+from sklearn import linear_model
 from sklearn.model_selection import train_test_split
 g=open("/Users/zhouya/Desktop/01/many_variable.csv",encoding='utf-8')
 data=pd.read_csv(g)
@@ -21,9 +22,9 @@ linear=linear_model.LinearRegression()
 linear.fit(X_train,y_train)
 
 #斜率
-print(linear.coef_ )
+print("斜率：{}".format(linear.coef_) )
 #截距
-print(linear.intercept_)
+print("截距:{}".format(linear.intercept_))
 #判定系数r^2，越大越好
 #训练集r^2
 print("训练集合上R^2 = {:.3f}".format(linear.score(X_train,y_train)))
